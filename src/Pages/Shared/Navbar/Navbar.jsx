@@ -3,15 +3,15 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     const user = false
     const links = <>
-        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid black" : " ", background: "transparent", color: "white"})} to="/">Home</NavLink></li>
-        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid black" : " ", background: "transparent", color: "white"})} to="/donationRequests">Donation Request</NavLink></li>
-        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid black" : " ", background: "transparent", color: "white"})} to="/blogs">Dashboard</NavLink></li>
+        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/">Home</NavLink></li>
+        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/donationRequests">Donation Request</NavLink></li>
+        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/blogs">Dashboard</NavLink></li>
     </>
     const handleLogout = () => {
     }
     return (
         <div>
-            <div className="navbar bg-green-500 text-white py-8 md:px-10 rounded-full">
+            <div className="navbar bg-[#34c1ce] text-white py-8 md:px-10 ">
               <div className="navbar-start">
                 <div className="dropdown">
                   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
