@@ -1,14 +1,23 @@
+import { useContext } from "react";
 import { FaList } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { toast } from "react-toastify";
 const Navbar = () => {
-    const user = false
+    const { user, logout } = useContext(AuthContext)
     const links = <>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/">Home</NavLink></li>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/donationRequests">Donation Request</NavLink></li>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/dashboard/dashboardHome">Dashboard</NavLink></li>
     </>
     const handleLogout = () => {
-    }
+        logout()
+        .then(res => {
+          console.log(res.user);
+        })
+        .catch(error => console.log(error));
+        toast('successfully logged out')
+      };
     return (
         <div>
             <div className="navbar bg-[#34c1ce] text-white py-8 md:px-10 ">
