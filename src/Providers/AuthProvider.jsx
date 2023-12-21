@@ -24,6 +24,11 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(Auth, provider); 
     }
 
+    const FaceBookLogin = (provider) => {
+        setLoading(true);
+        return signInWithPopup(Auth, provider)
+    }
+
     const logout = () => {
         setLoading(true);
         return signOut(Auth);
@@ -39,7 +44,7 @@ const AuthProvider = ({children}) => {
         }
     },[]);
 
-    const authInfo = {loginUser, googleLogin, user, logout, createUser, loading}
+    const authInfo = {loginUser, googleLogin, user, logout, createUser, loading, FaceBookLogin}
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

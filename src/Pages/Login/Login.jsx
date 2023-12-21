@@ -2,15 +2,16 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-    const { loginUser, googleLogin } = useContext(AuthContext)
+    const { loginUser, googleLogin, FaceBookLogin } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -37,6 +38,20 @@ const Login = () => {
         setLoginError('');
         setSuccess('');
         googleLogin(googleProvider)
+        .then(res => {
+            console.log(res.user);
+            setSuccess('successfully logged in');
+            toast("successfully logged in");
+            navigate(location?.state ? location.state : '/')
+        })
+        .catch(error => {
+            setLoginError(error.message);
+        })
+    }
+    const handleFacebookSignIn = () => {
+        setLoginError('');
+        setSuccess('');
+        FaceBookLogin(facebookProvider)
         .then(res => {
             console.log(res.user);
             setSuccess('successfully logged in');
@@ -75,6 +90,8 @@ const Login = () => {
                   </form>
                   <p className="text-center font-medium -mt-7 mb-1">or</p>
                   <button onClick={handleGoogleSignIn} className="btn btn-neutral mx-8 mb-5">Login With Google</button>
+                  <p className="text-center font-medium -mt-7 mb-1">or</p>
+                  <button onClick={handleFacebookSignIn} className="btn btn-neutral mx-8 mb-5">Login With Facebook</button>
                   {
                     loginError && <p className="text-red-700 px-8 pb-5">{loginError}</p>
                   }

@@ -8,7 +8,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/">Home</NavLink></li>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/donationRequests">Donation Request</NavLink></li>
-        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/dashboard/dashboardHome">Dashboard</NavLink></li>
+        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/dashboard/taskManagementDashboard">Dashboard</NavLink></li>
     </>
     const handleLogout = () => {
         logout()

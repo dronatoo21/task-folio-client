@@ -24,7 +24,7 @@ const Dashboard = () => {
                 </div>
                   {
                     user && <>
-                        <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/dashboardHome" className="px-5 mb-1 py-2 rounded-md border-2 text-white flex items-center gap-2"><FaCube/>Dashboard Home</NavLink>
+                        <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/taskManagementDashboard" className="px-5 mb-1 py-2 rounded-md border-2 text-white flex items-center gap-2"><FaCube/>Task Management</NavLink>
                     </>
                   }
                   

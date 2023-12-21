@@ -5,9 +5,10 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Dashboard from "../Layout/Dashboard";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import DashboardHome from "../Pages/Dashboard/DashboardHome";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import PrivateRoute from "./PrivateRoute";
+import TaskManagementDashboard from "../Pages/Dashboard/TaskManagementDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -31,12 +32,12 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard/>,
+        element: <PrivateRoute><Dashboard/></PrivateRoute>,
         errorElement: <ErrorPage/>,
         children: [
             {
-                path: 'dashboardHome',
-                element: <DashboardHome/>
+                path: 'taskManagementDashboard',
+                element: <PrivateRoute><TaskManagementDashboard/></PrivateRoute>
             }
         ]
     }
