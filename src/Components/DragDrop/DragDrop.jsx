@@ -22,7 +22,7 @@ const DragDrop = () => {
             },[])
 
             const [{ isOver, }, drop] = useDrop(()=>({
-                accept: "string",
+                accept: "div",
                 drop: ((item) => addTaskToList(item?.id)),
                 // drop: ({id: "1"}),
                 collect: (monitor) => ({
