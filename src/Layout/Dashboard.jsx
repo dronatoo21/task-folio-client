@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { FaCube, FaHome, FaList } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import { ToastContainer } from "react-toastify";
 
 const Dashboard = () => {
-    const user= true
+    const {user} = useContext(AuthContext)
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -12,6 +15,7 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="btn bg-gradient-to-r from-[#22a6b3] to bg-[#538cb4] drawer-button lg:hidden text-white"> <FaList/> Menu</label>
                 <div className="">
                 <Outlet/>
+                <ToastContainer/>
             </div>
               </div> 
               <div className="drawer-side min-h-screen">
@@ -25,6 +29,7 @@ const Dashboard = () => {
                   {
                     user && <>
                         <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/taskManagementDashboard" className="px-5 mb-1 py-2 rounded-md border-2 text-white flex items-center gap-2"><FaCube/>Task Management</NavLink>
+                        <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/userProfile" className="px-5 my-2 py-2 rounded-md border-2 text-white flex items-center gap-2"><FaCube/>My Profile</NavLink>
                     </>
                   }
                   

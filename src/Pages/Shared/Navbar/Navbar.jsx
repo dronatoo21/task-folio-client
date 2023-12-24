@@ -7,7 +7,6 @@ const Navbar = () => {
     const { user, logout } = useContext(AuthContext)
     const links = <>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/">Home</NavLink></li>
-        <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/donationRequests">Donation Request</NavLink></li>
         <li><NavLink className="rounded-none text-white font-semibold" style={({ isActive })=> ({borderBottom: isActive ? "2px solid #2b2a29" : " ", background: "transparent", color: "white"})} to="/dashboard/taskManagementDashboard">Dashboard</NavLink></li>
     </>
     const handleLogout = () => {
@@ -43,9 +42,9 @@ const Navbar = () => {
               </div>
                 {
                   user ? <>
-                  <label tabIndex={0} className="btn mx-3 btn-ghost btn-circle avatar">
-                      <img className="rounded-full" src={user?.photoURL} alt="img" />
-                      <p className="w-16">{user?.displayName}</p>
+                  <label tabIndex={0} className="btn w-20 mx-3 btn-ghost btn-circle avatar">
+                      <img className="mx-16 rounded-full" src={user?.photoURL} alt="img" />
+                      <p>{user?.displayName}</p>
                   </label>  
                   <NavLink><button onClick={handleLogout} className="btn bg-[#2b2a29] border-none text-white mr-2">Logout</button></NavLink>               
                   </> : <NavLink to="/login"><button className="btn bg-[#2b2a29] border-none text-white mr-2">Login</button></NavLink>

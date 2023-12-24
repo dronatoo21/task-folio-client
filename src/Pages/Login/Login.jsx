@@ -90,7 +90,7 @@ const Login = () => {
                   </form>
                   <p className="text-center font-medium -mt-7 mb-1">or</p>
                   <button onClick={handleGoogleSignIn} className="btn btn-neutral mx-8 mb-5">Login With Google</button>
-                  <p className="text-center font-medium -mt-7 mb-1">or</p>
+                  <p className="text-center font-medium -mt-4 mb-1">or</p>
                   <button onClick={handleFacebookSignIn} className="btn btn-neutral mx-8 mb-5">Login With Facebook</button>
                   {
                     loginError && <p className="text-red-700 px-8 pb-5">{loginError}</p>

@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
 import TaskManagementDashboard from "../Pages/Dashboard/TaskManagementDashboard";
+import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
             {
                 path: 'taskManagementDashboard',
                 element: <PrivateRoute><TaskManagementDashboard/></PrivateRoute>
+            },
+            {
+                path: 'userProfile',
+                element: <UserProfile/>
             }
         ]
     }
