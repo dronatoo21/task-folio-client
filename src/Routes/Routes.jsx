@@ -10,6 +10,7 @@ import Registration from "../Pages/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
 import TaskManagementDashboard from "../Pages/Dashboard/TaskManagementDashboard";
 import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
+import AllTasks from "../Pages/AllTasks/AllTasks";
 
 export const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
         {
             path: '/registration',
             element: <Registration/>
+        },
+        {
+            path: '/allTasks',
+            element: <AllTasks/>
         }
       ]
     },

@@ -36,15 +36,15 @@ const DragDrop = () => {
                 toast('task Completed')
             }
     return (
-            <div className="flex justify-around text-center w-full">
-                <div ref={drop} className="todo border-2 w-1/4 h-[90vh]"><span className="flex justify-center btn bg-slate-400">To-Do<p className="ml-2 font-semibold bg-[#2b2a29] p-2 rounded-full text-white">{tasks?.length}</p></span>{tasks?.map((task) => {
-                    return <Tasks key={task?._id} id={task?._id} title={task?.title}/>
+            <div className="flex md:flex-row flex-col justify-around text-center w-full p-2">
+                <div ref={drop} className="todo border-2 md:w-1/4 h-[90vh]"><span className="flex justify-center btn bg-slate-400">To-Do<p className="ml-2 font-semibold bg-[#2b2a29] p-2 rounded-full text-white">{tasks?.length}</p></span>{tasks?.map((task) => {
+                    return <Tasks key={task?._id} task={task} title={task?.title} id={task?._id}/>
                 })}</div>
-                <div ref={drop} className="ongoing border-2 w-1/4 h-[90vh]"><span className="flex justify-center btn bg-slate-400">On Going<p className="ml-2 font-semibold bg-[#2b2a29] p-2 rounded-full text-white">{onGoing?.length}</p></span>{onGoing?.map((task) => {
-                    return <Tasks key={task?._id} id={task?._id} title={task?.title}/>
+                <div ref={drop} className="ongoing border-2 md:w-1/4 my-10 md:my-0 h-[90vh]"><span className="flex justify-center btn bg-slate-400">On Going<p className="ml-2 font-semibold bg-[#2b2a29] p-2 rounded-full text-white">{onGoing?.length}</p></span>{onGoing?.map((task) => {
+                    return <Tasks key={task?._id} task={task} title={task?.title} id={task?._id}/>
                 })}</div>
-                <div ref={drop} className="completed border-2 w-1/4 h-[90vh]"><span className="flex justify-center btn bg-slate-400">Completed<p className="ml-2 font-semibold bg-[#2b2a29] p-2 rounded-full text-white">{completed?.length}</p></span>{completed?.map((task) => {
-                    return <Tasks key={task?._id} id={task?._id} title={task?.title}/>
+                <div ref={drop} className="completed border-2 md:w-1/4 h-[90vh]"><span className="flex justify-center btn bg-slate-400">Completed<p className="ml-2 font-semibold bg-[#2b2a29] p-2 rounded-full text-white">{completed?.length}</p></span>{completed?.map((task) => {
+                    return <Tasks key={task?._id} task={task} title={task?.title} id={task?._id}/>
                 })}</div>
             </div>
     );

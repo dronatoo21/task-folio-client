@@ -26,6 +26,7 @@ const CreateTask = () => {
           console.log(data);
           if(data.insertedId){
             toast('Successfully added task')
+            window.location.reload()
           }
         })
       }
