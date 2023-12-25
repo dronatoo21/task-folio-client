@@ -20,7 +20,7 @@ const Tasks = (task, {title}) => {
         }).then((result) => {
           if (result.isConfirmed) {
             console.log(task.id);
-          fetch(`http://localhost:4000/tasks/${task?.id}`,{
+          fetch(`https://task-folio-server-theta.vercel.app/tasks/${task?.id}`,{
             method: 'DELETE',
           })
           .then(res=>res.json())
@@ -46,7 +46,7 @@ const Tasks = (task, {title}) => {
     //         const status = task.status
     //         const fullData = {title, description, deadline, priority, status}
     //         console.log(fullData);
-    //     fetch(`http://localhost:4000/tasks/${task?.id}`, {
+    //     fetch(`https://task-folio-server-theta.vercel.app/tasks/${task?.id}`, {
     //             method: 'PATCH',
     //             headers: {
     //               'content-type': 'application/json'

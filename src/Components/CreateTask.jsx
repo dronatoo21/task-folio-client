@@ -14,7 +14,7 @@ const CreateTask = () => {
         const status = 'todo';
         const taskAdder = user?.email;
         const fullTask = {title, description, deadline, priority, status, taskAdder}
-        fetch('http://localhost:4000/tasks', {
+        fetch('https://task-folio-server-theta.vercel.app/tasks', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

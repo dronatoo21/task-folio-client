@@ -8,7 +8,7 @@ const DragDrop = () => {
     const [onGoing, setOngoing] = useState([])
     const [completed, setCompleted] = useState([])
     useEffect(()=>{
-                fetch('http://localhost:4000/tasks')
+                fetch('https://task-folio-server-theta.vercel.app/tasks')
                 .then(res => res.json())
                 .then(data => {
                     // setTasks(data)
