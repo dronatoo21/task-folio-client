@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
         },
         {
             path: '/allTasks',
-            element: <AllTasks/>
+            element: <PrivateRoute><AllTasks/></PrivateRoute>
         }
       ]
     },
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'userProfile',
-                element: <UserProfile/>
+                element: <PrivateRoute><UserProfile/></PrivateRoute>
             }
         ]
     }
